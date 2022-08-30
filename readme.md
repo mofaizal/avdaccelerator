@@ -26,12 +26,19 @@ Deploy Azure Virtual Desktop (AVD) resources and dependent services for establis
 - Azure Files share. Integration with Active Directory 
 - Session Hosts 
 
+### Baseline deployment options: 
+|Baseline deployment options:          | Azure portal UI <br/> [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#blade/Microsoft_Azure_CreateUIDef/CustomDeploymentBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Favdaccelerator%2Fmain%2Fworkload%2Farm%2Fdeploy-baseline.json/uiFormDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Favdaccelerator%2Fmain%2Fworkload%2Fportal-ui%2Fportal-ui-baseline.json) | Command line (Bicep/ARM) <br/> [![Powershell/Azure CLI](./workload/docs/icons/powershell.png)](https://github.com/Azure/avdaccelerator/blob/main/workload/bicep/readme.md) | Terraform <br/> [![Terraform](./workload/docs/icons/terraform.png)](https://github.com/Azure/avdaccelerator/blob/main/workload/terraform/readme.md)|
+|:-------------------------------------|:------------------------: |:------------------------: |:------------------------: |
+|Identity service provider AD |Yes |Yes |Yes |
+|Identity service provider AAD DS |Yes |No |Yes |
+|Host Pool type |Option to select Pooled / Personal |Option to select Pooled / Personal |Default deploys Pooled and Personal |
+|Image Gallery|Option to select Marketplace image / Compute Gallery is mandate to deploy AVD |Compute Gallery | Option to select Marketplace image / Compute Gallery |
+|Azure private DNS zone (Private endpoints)| Default set to No| Default set to No |Default set to Yes |
+|Virtual Network| New / Existing |New / Existing  | New  |
+|Gateway on hub| Default set to No|Default set to No | N/A |
+|FSLogix profile| Yes | Yes | Yes |
+|Scalling Plan| Yes | Yes | In-Progress |
 
-|Baseline deployment options:          |                           |
-|:-------------------------------------|:------------------------: |
-|Azure portal UI          |[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#blade/Microsoft_Azure_CreateUIDef/CustomDeploymentBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Favdaccelerator%2Fmain%2Fworkload%2Farm%2Fdeploy-baseline.json/uiFormDefinitionUri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Favdaccelerator%2Fmain%2Fworkload%2Fportal-ui%2Fportal-ui-baseline.json)      |
-|Command line (Bicep/ARM)              |[![Powershell/Azure CLI](./workload/docs/icons/powershell.png)](https://github.com/Azure/avdaccelerator/blob/main/workload/bicep/readme.md)          |
-|Terraform                             |[![Terraform](./workload/docs/icons/terraform.png)](https://github.com/Azure/avdaccelerator/blob/main/workload/terraform/readme.md)                  |
 
 ## Optional: Custom Image Build
 
